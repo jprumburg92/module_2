@@ -57,35 +57,16 @@ p {
     color: black;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media screen and (min-width: 768px) and (max-device-width: 991px) {
+@media screen and (min-width: 768px) and (max-width: 991px) {
     .container {
         grid-template-areas: 
         "sectionA sectionB"
         "sectionC sectionC";
         gap: 2.5em;
     }
-
     .sectionA {
         grid-area: sectionA;
     }
-
     .sectionB {
         grid-area: sectionB;
     }
@@ -93,9 +74,7 @@ p {
     .sectionC {
         grid-area: sectionC;
     }
-
 }
-    
 
 @media screen and (max-width: 767px) {
     .container {
