@@ -1,23 +1,33 @@
 
 body {
-    
+    margin: 0px;
+    padding: 2.5em;
 }
 
+h1 {
+    font-size: 1.75;
+    font-weight: bold;
+    text-align: center;
+}
 .container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr;
-    grid-column-gap: 5em;
-    justify-content: space-between
+    grid-auto-flow: column;
+    grid-column-gap: 2.5em;
+    justify-content: space-around;
 }
 
 section {
+    display: grid;
     box-sizing: border-box;
-    background-color: gray;
+    background-color: lightgray;
     justify-self: center;
     border: 2px solid black;
-    display: grid;
-    grid-template-rows: repeat(2, fit-content);
+    grid-template-rows: repeat(1fr, fit-content);
+}
+
+p {
+    padding: .5em;
+    margin: 0;
 }
 
 .label {
@@ -25,6 +35,26 @@ section {
     border-width: 0px 0px 2px 2px;
     align-self: start;
     justify-self: end;
+    padding: .5em;
+    min-width: 8em;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.25em;
+}
+
+#a {
+    background-color: lightcoral;
+    color: black;
+}
+
+#b {
+    background-color: red;
+    color: white;
+}
+
+#c {
+    background-color: lightgoldenrodyellow;
+    color: black;
 }
 
 
@@ -45,8 +75,31 @@ section {
 
 
 @media screen and (min-width: 768px) and (max-device-width: 991px) {
-    
-}
-@media screen and (max-width: 767px) {
+    .container {
+        grid-template-areas: 
+        "sectionA sectionB"
+        "sectionC sectionC";
+        gap: 2.5em;
+    }
 
+    .sectionA {
+        grid-area: sectionA;
+    }
+
+    .sectionB {
+        grid-area: sectionB;
+    }
+
+    .sectionC {
+        grid-area: sectionC;
+    }
+
+}
+    
+
+@media screen and (max-width: 767px) {
+    .container {
+        grid-auto-flow: row;
+        grid-row-gap: 2.5em;
+    }
 }
